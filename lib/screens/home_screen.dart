@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:practice/widgets/category_selector.dart';
 import 'package:practice/widgets/favorite_contacts.dart';
+import 'package:practice/widgets/recent_chats.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -55,16 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Column(
                 children: <Widget>[
                   FavoriteContacts(),
-                  Container(
-                    height: 300,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(30.0),
-                        topRight: Radius.circular(30.0),
-                      ),
-                    ),
-                  )
+                  RecentChats(),
                 ],
               ),
             ),

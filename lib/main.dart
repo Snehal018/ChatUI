@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Chat UI',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        fontFamily: 'Roboto',
+        fontFamily: 'OpenSans',
         primaryColor: Colors.red,
         accentColor: Color(0xFFFEF9EB),
       ),

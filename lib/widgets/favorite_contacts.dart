@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:practice/models/message_model.dart';
+import 'package:practice/screens/chat_screen.dart';
 
 class FavoriteContacts extends StatelessWidget {
   @override
@@ -34,33 +35,42 @@ class FavoriteContacts extends StatelessWidget {
             ),
           ),
           Container(
-            height: 120,
+            height: 122,
             color: Theme.of(context).accentColor,
             child: ListView.builder(
               padding: EdgeInsets.only(left: 10),
               scrollDirection: Axis.horizontal,
               itemCount: favorites.length,
               itemBuilder: (BuildContext context, int index) {
-                return Padding(
-                  padding: EdgeInsets.all(10.0),
-                  child: Column(
-                    children: <Widget>[
-                      CircleAvatar(
-                        radius: 35.0,
-                        backgroundImage: AssetImage(favorites[index].imageUrl),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        favorites[index].name,
-                        style: TextStyle(
-                          color: Colors.blueGrey,
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.w600,
+                return GestureDetector(
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (_) => ChatScreen(
+                                user: favorites[index],
+                              ))),
+                  child: Padding(
+                    padding: EdgeInsets.all(10.0),
+                    child: Column(
+                      children: <Widget>[
+                        CircleAvatar(
+                          radius: 35.0,
+                          backgroundImage:
+                              AssetImage(favorites[index].imageUrl),
                         ),
-                      ),
-                    ],
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          favorites[index].name,
+                          style: TextStyle(
+                            color: Colors.blueGrey,
+                            fontSize: 16.0,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 );
               },
