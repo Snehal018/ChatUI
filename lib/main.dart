@@ -7,8 +7,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Chat UI',
-      debugShowCheckedModeBanner: false,
+      title: 'Flutter Chat UI Changed',
+      debugShowCheckedModeBanner: true,
       theme: ThemeData(
         fontFamily: 'OpenSans',
         primaryColor: Colors.red,
